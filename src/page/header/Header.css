@@ -1,0 +1,121 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    align-items: center;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+    width: 100%;
+}
+.header_icon {
+    object-fit: contain;
+    height: 100px;
+    margin-left: 20px;
+}
+.header_text {
+    font-weight: 500;
+}
+.header_center {
+    display: flex;
+    align-items: center;
+    max-width: fit-content;
+    padding: 20px;
+    height: 30px;
+    border: 1px solid lightgray;
+    border-radius: 999px;
+    justify-content: space-between
+}
+.headerSearch {
+    background-color: white;
+    display: flex;
+}
+
+.header_right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 15vw;
+    margin-right: 80px;
+}
+
+.headerIcon {
+    color: black;
+}
+.headerSearchItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.btnSearchDate {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: white;
+}
+.btnSearchOption {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: white;
+}
+.btnSearch {
+    cursor: pointer;
+    font-weight: 600;
+}
+.headerSearchInput {
+    border: none;
+    outline: none;
+}
+.headerSearchText {
+    color: gray;
+    cursor: pointer;
+}
+.date {
+    position: absolute;
+    top: 80px;
+    z-index: 2;
+}
+.options {
+    /* z-index: 2; */
+    position: absolute;
+    top: 80px;
+    background-color: white;
+    color: gray;
+    /* border-radius: 5px; */
+    /* -webkit-box-shadow : 0px 0px 10px -5px rgba (0,0,0,0.4); */
+    /* box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4); */
+}
+.optionItem {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+.optionCounter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: black;
+}
+.optionCounterButton {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #4c4c6c;
+    color: #4c4c6c;
+    cursor: pointer;
+    background-color: white;
+}
+.optionCounterButton:disabled {
+    cursor: not-allowed;
+}
+.header_text {
+    cursor: pointer;
+}
+.drop_icon {
+    cursor: pointer;
+}
+.avatar_profile {
+    cursor: pointer;
+}
