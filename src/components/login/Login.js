@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { signIn } from '../../api/Api';
 import Footer from '../../page/footer/Footer';
 import { AuthContext } from '../../auth/AuthProvider';
+import Header from '../../page/header/Header';
 
 
 const Login = () => {
@@ -41,7 +42,7 @@ const Login = () => {
   
   return (
     <>
-    
+    <Header/>
     <div className='login'>
         <div className='loginContainer'>
             <h1 className='loginText'>Sign In</h1>

@@ -30,6 +30,7 @@ export const Search = ({type}) => {
       }
       
   return (
+
     <div className='search'>
         <DateRange
         ranges={date} 
@@ -46,5 +47,6 @@ export const Search = ({type}) => {
             <input min={0} defaultValue={2} type="number" />
             <Button onClick={() => navigate('/search')}>Search Airbnb</Button>
     </div>
+   
   )
 }

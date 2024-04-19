@@ -71,10 +71,11 @@ export async function getRoomById(roomId) {
     }
 }
 
+// Account APIS : 
 
 export async function signIn(login) {
     try {
-        const response = await api.post('/auth/login', login)
+        const response = await api.post('/api/register', login)
         if (response.status >= 200 && response.status < 300) {
             return response.data
         } else {
@@ -142,4 +143,19 @@ export async function getBookingsByUserId(userId, token) {
 		console.error("Error fetching bookings:", error.message)
 		throw new Error("Failed to fetch bookings")
 	}
+}
+
+// Manager APIS : 
+
+export async function managerSignUp(dataReq) {
+    try {
+        const response = await api.post('/auth/register-manager', dataReq)
+        return response.data
+    } catch (error) {
+        if (error.response && error.response.data) {
+            throw new Error(error.response.data)
+        } else {
+            throw new Error(`Error ${error.message}`)
+        }
+    }
 }

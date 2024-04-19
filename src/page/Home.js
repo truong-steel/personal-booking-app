@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Home.css'
 import Banner from './banner/Banner'
 import Card from '../components/card/Card'
@@ -7,6 +7,19 @@ import Footer from './footer/Footer'
 
 
 const Home = () => {
+  const [rooms , setRooms] = useState([])
+
+      const data = rooms.map((room) => ({
+        href: `/data/${room.id}`,
+        title : room.name,
+        avatar : room.img,
+        content : 
+            room.description,
+        description:
+        room.address
+      }) )
+
+
   return (
     <div className='home'>
       <Header/>

@@ -11,6 +11,9 @@ import { format } from 'date-fns'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faBed, faCalendar, faCalendarDays, faCar, faHouse, faMotorcycle, faPerson, faPlane, faSearch, faTaxi} from '@fortawesome/free-solid-svg-icons'
 import { DateRange } from 'react-date-range'
+import { Dropdown, Space } from 'antd';
+import { DownOutlined } from '@ant-design/icons'
+import Login from '../../components/login/Login';
 
 
 function Header() {
@@ -41,12 +44,22 @@ function Header() {
       const handleSearch = () => {
         navigate('/homestays', {state:{destination,date,options}})
       }
+      const items = [
+        {
+          key: '1',
+          label: (
+            <a target="_blank" rel="noopener noreferrer" onClick={() => navigate('/login')} >
+              Login
+            </a>
+          ),
+        },
+      ];
   return (
     <div className='header'>
       <Link to='/'>
       <img 
             className='header_icon'
-            src='https://i.pinimg.com/originals/3c/bf/be/3cbfbe148597341fa56f2f87ade90956.png'
+            src= {process.env.PUBLIC_URL + '/logo-final.png'}
             alt=''    
         />
       </Link>
@@ -107,6 +120,7 @@ function Header() {
         className='btnSearch'
         onClick={handleSearch}
         />
+       
       </div>
       
       
@@ -117,10 +131,17 @@ function Header() {
             >Become a host</p>
            
             <LanguageIcon/>
-            <ArrowDropDownIcon
-            className='drop_icon'
-
-            />
+            <Dropdown 
+             menu={{
+              items,
+            }}>
+            <a onClick={(e) => e.preventDefault()}>
+      <Space>
+        <DownOutlined />
+      </Space>
+    </a>
+            </Dropdown>
+            
             <Avatar
             className='avatar_profile'
             onClick={() => navigate('/profile')}

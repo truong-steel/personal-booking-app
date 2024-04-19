@@ -2,9 +2,13 @@ import { Button } from '@mui/material'
 import React from 'react'
 import './SearchPage.css'
 import SearchResult from './SearchResult'
+import Header from '../header/Header'
+import Footer from '../footer/Footer'
 
 const SearchPage = () => {
   return (
+    <>
+    <Header/>
     <div className='searchPage'>
             <div className='searchPage__info'>
                 <p>62 stays · 26 august to 30 august · 2 guest</p>
@@ -82,6 +86,8 @@ const SearchPage = () => {
             />
             
         </div>
+        <Footer/>
+        </>
   )
 }
 
