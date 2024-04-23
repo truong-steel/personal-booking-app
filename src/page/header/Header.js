@@ -42,7 +42,7 @@ function Header() {
         }})
       }
       const handleSearch = () => {
-        navigate('/homestays', {state:{destination,date,options}})
+        navigate('/search', {state:{destination,date,options}})
       }
       const items = [
         {
@@ -59,7 +59,7 @@ function Header() {
       <Link to='/'>
       <img 
             className='header_icon'
-            src= {process.env.PUBLIC_URL + '/logo.png'}
+            src= {process.env.PUBLIC_URL + '/2.png'}
             alt=''    
         />
       </Link>

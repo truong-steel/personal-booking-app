@@ -1,78 +1,73 @@
 .reserve {
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.418);
-    position: fixed;
-    top: 0;
-    left: 0;
+    width: 1024px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
   }
   
-  .rContainer {
-    background-color: white;
-    padding: 20px;
-    position: relative;
-  }
-  
-  .rClose {
-    position: absolute;
-    top: 0;
-    right: 0;
+  .btnSearchDate {
+    border: none;
+    outline: none;
     cursor: pointer;
-  }
-  
-  .rItem {
+    background-color: white;
+}
+.btnSearchOption {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: white;
+}
+.btnSearch {
+    cursor: pointer;
+    font-weight: 600;
+}
+.headerSearchInput {
+    border: none;
+    outline: none;
+}
+.headerSearchText {
+    color: gray;
+    cursor: pointer;
+}
+.date {
+    /* position: absolute; */
+    top: 120px;
+    z-index: 2;
+}
+.options {
+    /* z-index: 2; */
+    /* position: absolute; */
+    z-index: 2;
+    top: 290px;
+    right: 580px;
+    background-color: whitesmoke;
+    color: gray;
+    /* border-radius: 5px; */
+    /* -webkit-box-shadow : 0px 0px 10px -5px rgba (0,0,0,0.4); */
+    /* box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4); */
+}
+.optionItem {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+.optionCounter {
     display: flex;
     align-items: center;
-    gap: 50px;
-    padding: 20px;
-  }
-  
-  .rInfo {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-  
-  .rTitle {
-    font-weight: 500;
-  }
-  
-  .rDesc {
-    font-weight: 300;
-  }
-  
-  .rMax {
+    gap: 10px;
     font-size: 12px;
-  }
-  
-  .rPrice {
-    font-weight: 500;
-  }
-  
-  .rSelectRooms{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    font-size: 8px;
-    color: gray;
-  }
-  
-  .room{
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .rButton {
-    border: none;
-    padding: 10px 20px;
-    background-color: #0071c2;
-    color: white;
-    font-weight: bold;
+    color: black;
+}
+.optionCounterButton {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #4c4c6c;
+    color: #4c4c6c;
     cursor: pointer;
-    border-radius: 5px;
-    width: 100%;
-    margin-top: 20px;
-  }
+    background-color: white;
+}
+.optionCounterButton:disabled {
+    cursor: not-allowed;
+}

@@ -3,6 +3,8 @@ import Header from '../../page/header/Header'
 import {faBed, faCalendar, faCalendarDays, faCar, faHouse, faMotorcycle, faPerson, faPlane, faSearch, faTaxi} from '@fortawesome/free-solid-svg-icons'
 import { DateRange } from 'react-date-range'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Footer from '../../page/footer/Footer'
+import './Reserve.css'
 
 const Reserve = () => {
   const [openDate , setOpenDate] = useState(false)
@@ -27,11 +29,16 @@ const Reserve = () => {
   return (
     <div>
       <Header/>
-      <p>Confirm and Pay</p>
+      <hr/>
+      <div className='reserve'>
+      <h1>Confirm and Pay</h1>
       <h3>Your trip</h3>
       <p> Dates 
-      <button onClick={() => setOpenDate(!openDate)} className='btnSearchDate'>
-                    {`${date.startDate}`} </button>
+      <button className='btnSearchDate'>
+                    {`${date.startDate} - ${date.endDate}`} </button>
+              
+      <button onClick={() => setOpenDate(!openDate)} className='btnEditDate'>
+                    Edit </button>
                 {openDate && <DateRange
             editableDateInputs={true}
             onChange={item => setDate([item.selection])}
@@ -42,8 +49,10 @@ const Reserve = () => {
                 />}
       </p>
       <p> Guest
-      <button onClick={() => setOpenOptions(!openOptions)} className='btnSearchOption'>{`${options.adult} adult(s) 
+      <button className='btnSearchOption'>{`${options.adult} adult(s) 
                 - ${options.children} children(s)`}</button>
+
+        <button onClick={() => setOpenOptions(!openOptions)} >Edit</button>
 
                 { openOptions && <div className='options'>
                     <div className='optionItem'>
@@ -68,6 +77,14 @@ const Reserve = () => {
                     
                 </div> }
       </p>
+      
+      <div>
+      <hr/>
+        <button>Confirm</button>
+      </div>
+      </div>
+
+      <Footer/>
       
     </div>
   )
