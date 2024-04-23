@@ -4,28 +4,18 @@ import Banner from './banner/Banner'
 import Card from '../components/card/Card'
 import Header from './header/Header'
 import Footer from './footer/Footer'
+import { useNavigate } from 'react-router-dom'
 
 
 const Home = () => {
-  const [rooms , setRooms] = useState([])
-
-      const data = rooms.map((room) => ({
-        href: `/data/${room.id}`,
-        title : room.name,
-        avatar : room.img,
-        content : 
-            room.description,
-        description:
-        room.address
-      }) )
-
+  const navigate = useNavigate()
 
   return (
     <div className='home'>
       <Header/>
       <Banner/>
       <div className='home_section'>
-      <Card
+      <Card 
                 src="https://a0.muscache.com/im/pictures/eb9c7c6a-ee33-414a-b1ba-14e8860d59b3.jpg?im_w=720"
                 title="Online Experiences"
                 description="Unique activities we can do together, led by a world of hosts."
@@ -41,7 +31,7 @@ const Home = () => {
                 description="Comfortable private places, with room for friends or family."
             />
             </div>
-            <div className='home_section'>
+            <div className='home_section' onClick={()=> navigate('/room/:id')}>
             <Card
                 src="https://media.nomadicmatt.com/2019/airbnb_breakup3.jpg"
                 title="3 Bedroom Flat in Bournemouth"

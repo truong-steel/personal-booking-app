@@ -59,7 +59,7 @@ function Header() {
       <Link to='/'>
       <img 
             className='header_icon'
-            src= {process.env.PUBLIC_URL + '/logo-final.png'}
+            src= {process.env.PUBLIC_URL + '/logo.png'}
             alt=''    
         />
       </Link>

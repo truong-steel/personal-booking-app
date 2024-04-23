@@ -4,8 +4,10 @@ import './SearchPage.css'
 import SearchResult from './SearchResult'
 import Header from '../header/Header'
 import Footer from '../footer/Footer'
+import { useNavigate } from 'react-router-dom'
 
 const SearchPage = () => {
+    const navigate = useNavigate()
   return (
     <>
     <Header/>
@@ -19,6 +21,7 @@ const SearchPage = () => {
                 <Button variant="outlined">Rooms and beds</Button>
                 <Button variant="outlined">More filters</Button>
             </div>
+            <div className='list-room' onClick={()=> navigate('/room/:id')}>
             <SearchResult
                 img="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ_wbPYTxQPMcBh7SPzLFActXnP3uhifeVT_g&usqp=CAU"
                 location="Private room in center of London"
@@ -84,6 +87,7 @@ const SearchPage = () => {
                 price="£90 / night"
                 total="£650 total"
             />
+            </div>
             
         </div>
         <Footer/>
