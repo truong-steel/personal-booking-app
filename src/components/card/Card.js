@@ -3,7 +3,9 @@ import './Card.css'
 import { getAllRooms } from '../../api/Api'
 import axios from 'axios'
 
-const Card = ({src, title , description , price}) => {
+const Card = ({src, title , description , price , onClick}) => {
+
+    
 
     const [rooms , setRooms] = useState([])
 
@@ -19,7 +21,7 @@ const Card = ({src, title , description , price}) => {
 
 
   return (
-    <div className='card'>
+    <div className='card'onClick={onClick}>
         <img src={src} alt='' />
         <div className='card_info'>
             <h2>{title}</h2>

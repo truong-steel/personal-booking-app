@@ -11,6 +11,16 @@ export const getHearder = () => {
         'Content-Type': 'application/json'
     }
 }
+export async function getHomestay () {
+    try {
+        const res = await api.get("/api/homestays")
+        return res.content
+    }
+    catch (error) {
+        throw new Error ("Error fetching list homestay")
+    }
+}
+
 export async function addNewRoom ( image , roomType , roomPrice ) {
     const formData = new FormData()
     formData.append('image' , image)
