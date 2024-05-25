@@ -39,7 +39,7 @@ const Home = () => {
       </div>
       <div className='home_section' >
         {data && data.length > 0 && data.map((i) => <Card 
-          onClick={() => navigate(`/room/${id}`)}
+          onClick={() => navigate(`/room/id`)}
           src={i.homestayImage || ''}
           title={i.homestayName || ''}
           description={i.description || ''}
