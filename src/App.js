@@ -13,11 +13,12 @@ import ManagerRegister from './components/register/ManagerRegister';
 import Profile from './components/profile/Profile';
 import Room from './components/room/Room';
 import Reserve from './components/reserve/Reserve';
+import { AuthProvider } from './auth/AuthProvider';
 
 
 function App() {
   return (
-    <BrowserRouter>
+    <AuthProvider>
       <Routes>
       <Route path='/' element = {<Home/>} />
       <Route path='/search' element = {<SearchPage/>} />
@@ -33,7 +34,7 @@ function App() {
 
       <Route path='/profile' element={<Profile/>} />
       </Routes>
-    </BrowserRouter>
+    </AuthProvider>
     
   )
 }

@@ -35,6 +35,9 @@ function Header() {
       })
 
       const navigate = useNavigate()
+
+      const isLoggedIn = localStorage.getItem('token')
+      const currentUser = localStorage.getItem('userId')
     
       const handleOption = (name , operation) => {
         setOptions(prev => {return{
@@ -131,7 +134,9 @@ function Header() {
             >Become a host</p>
            
             <LanguageIcon/>
-            <Dropdown 
+            <>
+            { isLoggedIn ? 
+            (<h4>{currentUser}</h4>) : ( <Dropdown 
              menu={{
               items,
             }}>
@@ -139,8 +144,11 @@ function Header() {
       <Space>
         <DownOutlined />
       </Space>
+      
     </a>
-            </Dropdown>
+            </Dropdown>) }
+          </>
+            
             
             <Avatar
             className='avatar_profile'

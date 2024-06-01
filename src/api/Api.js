@@ -85,7 +85,7 @@ export async function getRoomById(roomId) {
 
 export async function signIn(login) {
     try {
-        const response = await api.post('/api/register', login)
+        const response = await api.post('/api/login', login)
         if (response.status >= 200 && response.status < 300) {
             return response.data
         } else {
@@ -99,8 +99,8 @@ export async function signIn(login) {
 
 export async function signUp(dataReq) {
     try {
-        const response = await api.post('/auth/register-user', dataReq)
-        return response.data
+        const response = await api.post('/api/users', dataReq)
+        return response.data.content
     } catch (error) {
         if (error.response && error.response.data) {
             throw new Error(error.response.data)
@@ -123,7 +123,7 @@ export async function getUserProfile(userId, token) {
 
 export async function getUser(userId, token) {
     try {
-        const response = await api.get(`/users/${userId}`, {
+        const response = await api.get(`/api/profiles/${userId}`, {
             headers: getHearder()
         })
         return response.data

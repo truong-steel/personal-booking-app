@@ -11,8 +11,7 @@ const Register = () => {
     const [register , setRegister] = useState({
         email:"",
         password:"",
-        fullName:"",
-        phone:"",
+        name:"",
         username:""
     })
     const [success, setSuccess] = useState(false);
@@ -28,7 +27,7 @@ const Register = () => {
             const result = await signUp(register)
             setSuccessMessage(result)
             setErrorMessage("")
-            setRegister({ email: '', password: '', fullName:'', phone: '',  username:'',})
+            setRegister({ email: '', password: '', name:'', username:'',})
             setSuccess(true);
         } catch (error) {
             setSuccessMessage("")
@@ -90,20 +89,11 @@ const Register = () => {
                 <label>Customer Name :</label>
                 <input
                 type='text'
-                placeholder='full name'
-                id='fullName'
+                placeholder='name'
+                id='name'
                 onChange={handleInPutChange}
                 className='loginInput'
-                required value={register.fullName}
-                />
-                <label>Phone Number:</label>
-                <input
-                type='tel'
-                placeholder='phone number'
-                id='phone'
-                onChange={handleInPutChange}
-                className='loginInput'
-                required value={register.phone}
+                required value={register.name}
                 />
                 <label>Username :</label>
                 <input
